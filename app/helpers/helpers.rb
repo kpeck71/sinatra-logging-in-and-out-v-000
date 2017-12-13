@@ -1,5 +1,5 @@
 class Helpers
-  def logged_in?
+  def self.logged_in?
     !!session[:user_id]
   end
 
