@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
-    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">
   </head>
   <body id="page-top">
-    
-
+    <% if Helper.current_user.is_logged_in?(session) %>
+    <p>Your balance is: <%= Helper.current_user(session).balance %></p>
+    <% else %>
+    <p>You Must <a href="/">Log In</a> to View Your Balance</p>
+    <%end%>
+  <p><a href="/logout">Log Out</a></p>
   </body>
 </html>
